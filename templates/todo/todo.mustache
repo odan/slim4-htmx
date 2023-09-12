@@ -1,0 +1,24 @@
+<div class="container">
+    <h1>My Todo App</h1>
+    <div class="mb-2">
+        <button hx-post="/todo"
+                hx-swap="innerHTML"
+                hx-target="#todoList"
+                hx-indicator="#spinner"
+                class="btn btn-primary">
+            Add Todo
+        </button>
+        <button hx-delete="/todo"
+                hx-swap="innerHTML"
+                hx-target="#todoList"
+                hx-indicator="#spinner"
+                class="btn btn-danger m-1">
+            Clear all
+        </button>
+    </div>
+    <div class="row">
+        <div id="todoList">
+            {{> todo/todo_list_items }}
+        </div>
+    </div>
+</div>

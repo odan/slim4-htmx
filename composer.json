@@ -1,0 +1,17 @@
+{
+    "require": {
+        "mustache/mustache": "^2.14",
+        "nyholm/psr7": "^1.8",
+        "nyholm/psr7-server": "^1.0",
+        "odan/session": "^6.1",
+        "php-di/php-di": "^7.0",
+        "slim/slim": "4.*"
+    },
+    "config": {
+        "process-timeout": 0,
+        "sort-packages": true
+    },
+    "scripts": {
+        "start": "php -S localhost:8080 -t public/"
+    }
+}
