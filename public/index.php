@@ -13,8 +13,8 @@ $containerBuilder = new ContainerBuilder();
 $containerBuilder->addDefinitions(__DIR__ . '/../config/container.php');
 
 AppFactory::setContainer($containerBuilder->build());
-$app = AppFactory::create();
 
+$app = AppFactory::create();
 $app->add(SessionStartMiddleware::class);
 $app->addBodyParsingMiddleware();
 $app->addRoutingMiddleware();
@@ -25,7 +25,7 @@ $app->get('/', function ($request, $response) {
     $renderer->setLayout('layout');
 
     $session = $this->get(SessionInterface::class);
-    $items = $session->get('items', []);
+    $items = $session->get('items');
 
     $data = [
         'items' => $items,
